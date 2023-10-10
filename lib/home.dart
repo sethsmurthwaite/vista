@@ -10,6 +10,8 @@ class MyWidget extends StatefulWidget {
 class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
-    return const Text('LAME');
+    return const SafeArea(
+        child: Text('this is some text')
+    );
   }
 }
