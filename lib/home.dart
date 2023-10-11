@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'menuDrawer.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -8,10 +9,22 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
+
+  var menuOpen = false;
+
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-        child: Text('this is some text')
+    return Scaffold(
+      drawer: MenuDrawer(),
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text('hello there'),
+        centerTitle: true,
+      ),
+      body: Column(),
     );
   }
 }
+
+
+
