@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+class MyHome extends StatefulWidget {
+  const MyHome({super.key});
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<MyHome> createState() => _MyHomeState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return const SafeArea(
