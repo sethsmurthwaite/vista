@@ -15,8 +15,6 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-
       bottomNavigationBar: BottomNavigationBar(
       items: const [BottomNavigationBarItem(
           icon: Icon(Icons.bathtub),
