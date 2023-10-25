@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'menuDrawer.dart';
+import 'bottomNavigationBar.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -9,35 +9,60 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
+  int _currentIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 
   var menuOpen = false;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-      items: const [BottomNavigationBarItem(
-          icon: Icon(Icons.bathtub),
-          label: "Home"
-          ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.microwave),
-          label: "F O O D"
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.delete),
-          label: "Delete"
-          )
-      ]),
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('hello there'),
-        centerTitle: true,
-      ),
-      body: Column(),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth > 0) {
+          return DefaultTabController(
+            length: 4,
+            child: Scaffold(
+              appBar: AppBar(
+                centerTitle: false,
+                title: const Text('Vista'),
+                actions: const [],
+                bottom: const TabBar(
+                  isScrollable: true,
+                  tabs: [
+                    Tab(text: 'Tab Number 1'),
+                    Tab(text: 'Tab Number 2'),
+                    Tab(text: 'Tab Number 3'),
+                    Tab(text: 'Tab Number 4'),
+                  ],
+                ),
+              ),
+              bottomNavigationBar: CustomBottomNavigationBar(
+                currentIndex: _currentIndex,
+                onTap: _onItemTapped,
+              ),
+              body: Column(),
+            ),
+          );
+        } else {
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.blue,
+              title: const Text('hello there'),
+              centerTitle: true,
+            ),
+            bottomNavigationBar: CustomBottomNavigationBar(
+              currentIndex: _currentIndex,
+              onTap: _onItemTapped,
+            ),
+            body: Column(),
+          );
+        }
+      },
     );
   }
 }
-
-
-
