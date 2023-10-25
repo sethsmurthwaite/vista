@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vista/home.dart';
+import 'package:vista/src/home.dart';
 
 void main() {
   runApp(const MyApp());
