@@ -44,15 +44,6 @@ class MenuDrawer extends StatelessWidget {
                   Navigator.pop(context);
                 },
               ),
-              ListTile(
-                leading: Icon(Icons.logout),
-                title: Text('Logout'),
-                onTap: () {
-                  // Perform Logout
-                  print('Logout pressed');
-                  Navigator.pop(context);
-                },
-              ),
             ],
           ),
         ),

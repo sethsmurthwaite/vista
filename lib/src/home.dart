@@ -15,7 +15,7 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MenuDrawer(),
+
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text('hello there'),
