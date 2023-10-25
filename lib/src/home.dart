@@ -16,6 +16,22 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
 
+      bottomNavigationBar: BottomNavigationBar(
+      items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.bathtub),
+          label: "Home"
+          ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.microwave),
+          label: "F O O D"
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.delete),
+          label: "Delete"
+          )
+        )
+      ]),
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text('hello there'),
