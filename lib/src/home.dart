@@ -17,8 +17,7 @@ class _MyHomeState extends State<MyHome> {
     return Scaffold(
 
       bottomNavigationBar: BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
+      items: const [BottomNavigationBarItem(
           icon: Icon(Icons.bathtub),
           label: "Home"
           ),
@@ -30,11 +29,10 @@ class _MyHomeState extends State<MyHome> {
           icon: Icon(Icons.delete),
           label: "Delete"
           )
-        )
       ]),
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('hello there'),
+        title: const Text('hello there'),
         centerTitle: true,
       ),
       body: Column(),
